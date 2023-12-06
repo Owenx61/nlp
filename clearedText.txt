@@ -1,0 +1,1048 @@
+1. world wide web
+alapfogalmak:
+- erőforrás: minden ami uri-val azonosítható (információ erőforrás minden lényeges
+jellemzője továbbítható egyetlen üzenetbe- reprezentáció: erőforrás állapotáról információkat kódoló adatok
+- tartalomegyeztetés: erőforráshoz több reprezentáció kínálása, legjobb kiválasztása
+- hivatkozás feloldás: uri használata hivatkozott erőforrás eléréséhez
+formái: reprezentáció letöltése, létrehozása, módosítása, néhány vagy összes
+reprezentáció törlése
+- felhasználói ágens: személy nevében cselekvő szoftver
+szabványok fajtái:
+- de facto: gyakor használatból, piaci elfogadottságból származnak. pl: qwerty kiosztás
+- de jure: helyi / állami / nemzetközi szintű szabályok által előírt szabványok. pl: si m.
+- önkéntes közmegjegyzés: magánintézmények által meghatároztt szabványok. pl:
+tcp/ip protokollkészlet
+szabványokért felelős szervezetek:
+iana: internet assigned numbers authority
+- internet működése alapjául szolgáló kódok / számok kiosztása
+- dns gyökérzóna felügyelete, karbantartása(.inf, .arp- ip címek kiosztásának globális koordinálása
+- nyilvántartás internet protokollokhoz használt kódokról, számokról
+ietf: internet engineering task force
+- internet szabványokat fejlesztő nemzetközi szabványügyi szervezet
+- tcp/ip protokollkészlet fejlesztése
+- bárki tagja lehet
+- munkacsoportokban dolgoznak
+rfc sorozat: request for comments
+- internetről szóló műszaki és szervezeti dokumentumokat tartalmaz
+- folyamatai:
+ietf – internet engineering task force
+iab – architecture board
+irtf – research task force
+független beadványok
+kiadott rfc-k soha nem módosulnak, hibákat javítják
+- ietf rfc-k alsorozatai:
+- bcp: best current practice: irányelveket, folyamatokat dokumentálnak
+bcp index
+- std: internet standard
+std index
+- bcp-k és std-k alsorozatokan számot kapnak, de rfc-k is megtartják
+- bcp és std több rfc-hez is tartozhat
+standard track: rfc-k érettségi szintjei
+- proposed standard
+- draft standard
+- internet standard
+internet-draft: egyfajta demo verzió, fejlesztési céllal teszik elérhetővé
+nem feltétlen kerülnek publikálásra
+legfeljebb 3 hónapig érvényesek
+w3c – word wide web consortium:
+- webszabványok fejlesztésén dolgozó nemzetközi közösség, technológiákat
+meghatározó és szabványnak számító dokumentumokat publikálnak (ajánláso- nyílt szabványok alapelvei:
+- web mindenkinek: web elérése mindenki számára, mindentől függetlenül
+- web mindenhol: web eszközfüggetlen elérése
+- szakmai jelentések éretségi szintjei:
+- working draft: munkaterv áttekintési céllal publikált dokumentum
+nem minden wd célja hogy ajánlás legyen
+- candidate reccomendation (tapasztalatszerzés): már áttekintett dokumentum,
+aktuális cél az előzetes javaslat
+- proposed reccomendation (javaslatterv): megfelelő minőségű ahhoz, hogy
+ajánlássá váljon
+- recommendation (ajánlás): széles körben alkalmazott webszabvány
+- working group note: dokumentum, melyet nem szánnak rec-nek,
+félbehagyott munkát dokumentál
+- túlhaladott ajánlás: superseded rec – újabb verzió váltotta fel
+- elavult ajánlás: obsolete rec – nincs elegendő piaci jelentősége, hogy a továbbiakban
+is implementálásra ajánlja a w3c
+whatwg: web hypertext application technoloy working group
+- a közösség célja a html és hozzá kapcsolódó technológiák fejlesztése
+2. unicode:
+univerzális karakterkódolási szabvány, lefedi a világ összes modern és ősi nyelvét, egyéb
+írott szövegben használt szimbólum is része
+kódtér: karaktereket kódoló egész számok tartománya
+kódpont: egy adott karaktert kódoló egész szám a kódtérben
+bmp: basic multilingual plane: első 216 kódpontot (65536) tartalmazó sík
+(u+0000 – u+fff•karakterkódolások:
+- utf-8:
+- ábrázolás 1-4 byte (változó szélességű)
+- u+0000 – u+ffff tartomány 1 byte-on
+- u+0080 – u+0fff tartomány 2 byte-on
+- bmp többi kódpontja 3 byte
+- bmp kívüli kódpontok 4 byte
+- utf-16:
+- minden kódpont 2 vagy 4 byte-on ábrázolt (változó szélességű)
+bmp karakterei 2, összes többi 4 byte-on
+- hatékony feldolgozhatóság, hatékony tárhelyhasználat
+- utf-32:
+- minden kódpont ábrázolása 4 byte-on (rögzített sélességű)
+- leghatékonyabb feldolgozás, legnagyobb tárhelyigény
+- iso/iec 8859:
+- 8 bites szabványok
+- 8859-1 latin 1 – ny-eu nyelvek
+- 8859-2 latin 2 – közép eu nyelvek
+karakterek kifejezése:
+- css: \hhhh
+- 6 hexadecimális karakter
+- 6-nál kevesebbnél whitespace kell a végére
+- json: \unnnn
+- 4 hexadeximális karakter
+xml/html:
+- #nnnn – 4 decimális
+- #xhhhh 4 hexadecimális
+3. média típusok
+internet protkollon keresztül továbbított tartalmak formátumának jelzése
+felső szintű típus:
+- kisbetű-nagybetű érzéketlen
+- application: többi felső szintű típusba nem tartozó alkalmazói programok által
+feldolgozott adatok részére
+- audio
+- font
+- image
+- message, multipart: összetett típusok, külfönféle média típusú
+objektumok egységbe zárását teszi lehetővé
+- model: fizikai modell reprezentációk típusai
+- text: karakterkódolás meghatározása, charset paraméter
+- video
+altípusok: nevének elején fa előtag határozza meg a regisztrációs fát
+használat körétől függ melyik fába regisztrálódik
+regisztrációs fák:
+1. szabványok : standards
+2. gyártói: vendor
+3. személyes: personal / vanity
+4. nem regisztrált: unregistered x tree
+1. internet közösség érdeklődésére szánt média típusok
+pl. application / gzip
+2. nyilvánosan elérhető termékekhez kötődő médiatípusok
+pl. application /
+3. kísérleti, nem üzletszerűen terjesztett termékek
+pl. audio /
+4. x. előtaggal kezdődik, privát módon használható lokális környezetben
+paraméterek:
+- kisbetű-nagybetű érzéketlen
+- tetszőleges sorrendben mind max egyszer adható meg
+- értékeikre nincs előírt szintaxis
+- médiatípus regisztráció határozza meg a nevét és értékeit
+struktúrált szintaxis utótag:
+- altípus: nevének a ‘+’ karaktert követő része
+- médiatípus szerkezetét jelzi
+- ezeket is regisztrálni kell
+pl. +ber, + cbor, +der, +fastinfoset
+regisztrációs követelmények:
+- meghatározhatja az alkalmazások számára az erőforrásrész-azonosító
+értelmezését
+- sss regisztrációja meghatározhatja a szintaxist: alkalmazó média típusokhoz az
+erőforrásrész-azonosító feldolgozásának módját
+regisztrációs folyamat: iana adminisztrálja
+4. uri
+uri: uniform resource idenifier: weben használt globális azonosító.
+absztrakt vagy fizikai erőforrást azonosító karaktersorozat
+uri-t akár tárgyi világ objektumaihoz is lehet rendelni.
+kinézete sémanév, sémaspecifikus rész → szintaxisát sémaspecifikáció határozza meg
+iana adminisztálja az uri sémákat.
+uri sémák: file, http:, about:
+uri karakterek:
+- fenntartott: / ? # [ ] @ ! ? $ & ‘  * + , ; =
+- nem fenntartott: a-z, a-z, 0-9, - . _ ~
+karakterkódolást nem határoz meg
+százalékos kódolás:
+- nem megengedett karakter használatához vagy fenntartott karakterek speciális
+jelentésének elnyomásához
+lépései:
+1. karaktert ábrázoló oktet sorozatot tekintjük
+2. ezt a sorozatot karakterlánccá kódoljuk, melyben minden oktettet %hh módon
+ábrázolunk (2 hexadecimális számjeggyeegyszerűen: fenntartott karakterek helyetesítése %hh alakban
+uri szintaxis:
+- általános szintaxisa: séma: hierarchikus rész [? lekérdezés] [# erőforrásrész]
+- hierarchikus rész authority és path komponenseket tartalmazhat
+// útvonal
+- ha nincs authority , a path üres kell legyen vagy /-el kezdődnie
+- authority: az uri további része fennhatóság alá tartozik
+[userinfo ‘@’] host [:port] - az uri sémák meghatároznak egy portot
+- path: részeit / választja el egymástól
+- első ‘?’ vagy ‘#’ karakterig tart, ha nincs akkor uri végéig
+- állományrendszerekben ‘.’ és ‘..’ is használható path részeként
+- lekérdezés komponensei: eleje ‘?’ , vége ‘#’ vagy uri vége
+- nem hierarchikus adatokat tartalmaz
+- általában név=érték formájú, a párokat ‘&’ választja el
+- erőforrásrész-azonosító: eleje ‘#’, uri végéig tart
+- lehetővé teszi a másodlagos erőforrás közvetett azonosítását
+(másodlagos erőforrás lehet az első rész- jelentését az elsődleges erőforrás elérése során kapott reprezentációk
+határozzák meg
+- médiatípusok meghatározhatják az erőforrásrész azon formáját, az így
+azonosított másodlagos jelentését
+- erőforrás azonosító jelentése:
+text / html típus:
+- dokumentum adott részét jelenti, állapotinformációt szolgáltat scriptek számára
+pl: https://…#t-77 → yt videó 77 mp-től kezdődik
+application / xml, text / xml
+x pointer framework specifikációja adja a szintaxist és jelentést
+uri-hivatkozás: uri vagy relatív hivatkozás
+relatív hivatkozás adott környezetben értelmezett
+bázis uri alapján uri formálható belőle
+feladásához algoritmust ad meg a specifikáció
+abszolút uri: nem tartalmaz erőforrásrész azonosítót
+bázisként csak abszolút uri használható
+relatív hivatkozás feloldása:
+bázis: http:example/a/b/c?q
+relatív
+eredmény
+d
+http://example/a/b/d
+./d
+http://example/a/b/d
+/d
+http://example/d
+//localhost
+http://localhost
+?y
+http://example/a/b/c?y
+d?y
+http://example/a/b/d?y
+#z
+bázis #2
+“ “
+bázis
+.
+http:example/a/b/
+./
+http:example/a/b/
+..
+http:example/a/
+../d
+http:example/a/d
+../../d
+http:example/d/
+uri-k összehasonlítása:
+- séma: host komponensek kis-nagybetű érzéketlenek
+- többi komponensre érzékenységet kell feltételezni, kivéve ha mást ír a séma
+- ekvivalencia def: két uri ekvivalens ha ugyanazt az erőforrást azonosítják
+- gyakorlatban az ekvivalencia összehasonlításra alapul
+összehasonlítás során normalizálás (nagybetű átalakítása érzéktlen
+komponensekbe5. http
+állapot nélküliség: egymást követő kérések független kezelése
+kiterjeszthetőség: metódusok, állapotkódok, fejlécmezők
+http: 80-as port, https: 443-as port  alapérelmezés szerint
+szintaxis: http/https :// host[: port][útvonal][? lekérdezések]
+üzenet absztrakció: több verziót átfogó általánosítás
+üzenet alkotóelemei:
+- vezérlő adatok
+- fejléc szakasz
+- tartalom
+- lezáró szakasz
+vezérlő adatok
+üzenet elsődleges céljukat leíró vezérlő adatok
+kérésben: metódus, kérési cél, protokoll verziója
+válasz: állapotkód, opcionális indok, protokoll verzió
+fejléc szakasz
+tartalom előtt küldött mezők a fejlécmezők
+tartalom
+byte folyamként kerül továbbításra fejléc után
+content-type és content-encoding határozzák meg a
+kódolást/formátumot
+szemantika: tartalom célját metódus szemantika határozza
+meg
+válaszban a tartalom célját a kérés metódusa, az állapotkód és
+a tartalmat leíró mezők határozzák meg
+lezáró szakasz
+tartalom után küldött mezők
+ellenörző összegek, digitális aláírások, kézbesítési metrikák,
+utófeldolgozási információk
+lezáró mezőket fejléctől elkülönítve ajánlott tárolni,
+feldolgozni
+mezők: adatok név-érték párok formájában
+- kezdetinformációk továbbítása a céljuk
+- üzenetet leíró metaadatok
+- reprezentáció metaadatok
+- információk kliensről / szerverről
+- erőforrás metaadatok
+- küldésük és fogadásuk fejléc és lezáró szakaszban történik
+- mezőnevek us-ascii karakterkészlet egy részhalmazából állhat
+- mezőérték us-ascii karakterekből, szóközökből, vízszintes tabból állhat
+vezető, záró whitespace karaktereket felhasználás előtt el kell távolítani
+minden mező korlátozhatja az értékeit
+- mezőszakaszok: mezősorokból állnak, tartalma mezőnév + mezősor érték
+sorrendjük nem lényeges
+- mezők összes http verzióhoz kerülnek meghatározásra
+user-agent fejlécmezők:
+- felhasználói ágensről(xtartalmaz információkat, kérés származásától
+felhasználható válasz testreszabásához
+- ajánlott minden kérésben elküldeni a fejlécmezőt
+- egy vagy több termékazonosítóból áll melyeket megjegyzések követhetnek
+- azonosítók felsorolása fontosság szerint csökkenően
+- termékazonosító: név + verziószám (opcionáli- megjegyzéseket zárójelek határolják
+metódusok:
+get: információ lekérés
+- cél egy kiválasztott reprezentációját kéri
+- kliens kérheti, hogy a kiválasztott reprezentáció bizonyos részeit kapja meg
+- get-re adott válasz cache-elt
+head: get-tel azonos, de válaszban üzenettörzset nem küldhet, válasz cache-elt ha
+cache controlt nem jelez mást
+post: kéri, hogy a cél dolgozza fel a mellékelt reprezentációt saját szemantikája
+szerint
+- lehetőségek: adatok küldése feldolgozónak
+üzenet eljuttatása hírcsoportba
+új erőforrás létrehozása
+adatok hozzáfűzése létező reprezentációhoz
+- csak frissítési információ cache-el
+put: szerver létrehozza vagy helyettesíti a cél állapotát
+- sikeres ha 200(oüzenetet kapunk következő get kérésre
+- post küldés – put hellyetesítés
+delete: cél erőforrás és aktuális felhasználási kapcs törlése
+- sikeres ha válasz 200, 202, 204
+állapotkódok: háromjegyű decimális
+- első számjegy határozza meg a fajtáját
+1xx – információs: végső válasz előtti előzetes válasz
+2xx – siker: szerver megkapta / elküldte a kérést
+3xx – átirányítás: kérés kiszolgáláshoz további műveletek
+4xx – kliens hiba
+5xx – szerver hiba
+tartalomegyeztetés:
+rendelkezésre álló reprezentációk eltérőek lehetnek formátumban / kódolásban
+cél a legmegfelelőbb kiválasztása.
+- proaktív egyeztetés: szerver-vezérelt tartalomegyeztetés
+- accept, accept-charset, accept-encoding, accept-language, user-agnet mezők
+alapján választ
+- egyeztetés után a válaszban jelzi mi alapján választotta az adott reprezentációt
+hátrány:
+- nem hatékony minden kérésben az ágens feltételeit leírni
+- bonyolult válaszadás szerver részről
+- korlátozott válasz újrafelhasználás
+- lehetetlen pontosan meghatározni a legjobb reprezentációt
+ajánlott: ha szerver első válaszban el akarja küldeni a legmegfelelőbb
+reprezentációt, további kérést elkerüli
+- accept fejlécmező: értéke média tartományok vesszővel elválasztott listája
+- minden tartományt több típusparaméter követhet, azt relatív súly (?) követheti
+- */* : összes típus
+- type /* : adott típus összes altípusa
+- type / subtype: adott médiatípus text/html
+eltérő lehet címsorban és letöltés után
+- location mező: jelzi hova irányít egy kérés
+- http 1.1 formátum:
+1. kezdősor   “http/1.1”
+2. o – több fejlécsor (?)
+3. üres sor – fejléc vége
+4. üzenettörzs (opcionáliősor:
+- kérés-cél a célt azonosítja
+- gyakori formája útvonal [“?” lekérdezés]
+- ha a cél üres a kliens ‘/’-t küld
+- uri host és port – host mezőben kerül küldésre
+- válaszok 1. sora az állapotsor: “http/1.1”  [indok-frázis]
+- mezősorok: mezőnév: opc. vezető whitespace + érték záró whitespace
+- mezősorokat crlf zárja
+4. üzenetörés:
+- kérés vagy válasz tartalmának hordozása
+- azonos a tartalommal feltéve ha nem alkalmaz átviteli kódolást
+6. webböngészők
+felépítése és komponensei:
+ui: címsor, gombok, menük, minden
+látható rész kivéve ahol a lap
+megjelenítésre kerül
+browser engine: közvetítő szerep ui
+és rendering engine közt
+- magas szintű interfész rendering
+engine manipulálásához
+rendering engine:  célja webes tartalom megjelenítése
+hálózati komponens: hálózati kommunikáció megvalósítása
+- platformfüggetlen interfész, melyen platformspecifikus api-kat használnak
+js engine: js kód végrehajtása
+ui backend: ui elemek és weboldal megjelenítése
+- platformfüggetlen interfész, melyen platformspecifikus api-kat használnak
+data storage: adatok perzisztens tárolása
+fő render motorok:
+asztali böngészők
+mobil böngészők
+chromium
+firefox
+opera
+safari
+ms edge
+google chrome
+safari
+samsung internet
+uc browser
+böngésző kidegészítők, kiterjesztések:
+- kiegészítők: megjelenés vagy viselkedés testreszabása
+- kiterjesztés: új funkciót ad hozzá vagy meglévőt módosít
+headless böngészők:
+- gui nélkül működnek
+- programozottan viselkednek
+- felhasználás: webes appok automata tesztelése, interakciók automatizálása,
+információk kinyerése, screenshotok készítése
+- open source headless böngészők: htmlunit, puppeteer
+webkit
+blink
+edge html
+gecko
+fejlesztő (?)
+apple
+chromium
+project
+microsoft
+mozilla project
+licensz
+lgplv2 /
+simplified bsd
+license
+lgplv2.1
+nem szabad
+mozilla public
+license 2
+nyelv
+c++
+c++
+c++
+c, c++, js, rust
+használat
+safari
+chrome (iofirefox (iognome web
+chromium
+chrome
+edge
+firefox (iovivaldi
+edge
+firefox
+about uri séma:
+- böngészők hozzáférést adnak belső erőforrásaikhoz, beállítások, alkalmazásinfó
+chrome: chrome://about
+firefox: about:about
+opera: chrome alap részhalmaza + pár extra. sémanév: opera:
+safari: csak about:blank
+ms edge: néhány uri-t támogat pl: about:blank, about:flags
+chromium edge: edge://, edge://about
+7. markdown
+pehelysúlyú jelölőnyelv sima szövegformázási szintaxissal
+- könnyen írható, olvasható
+- különféle kimeneti formátumba alakítható
+- egyszerű felhasználókat célozza meg
+- szintaxisát sima e-mail formázás ihlette
+felhasználása:
+- kollaborációs eszközök, platformok
+- tartalomkezelő szoftverek
+- közösségi platformok
+- műszaki / tudományos publikálás
+szabványosítás: common mark
+- markdown egyértelmű szintaxis specifikációja tesztkészlettel kiegészítve
+egyéb változatok: gfm, pandoc’s markdown
+jelölőnelvek: szövegek, képek, egyéb elemek ellátása valamilyen jelölésrendszerrel
+- szövegrészek ellátása metaadatokkal szövegtől elkülönülve
+8. xml
+szintaxis strukturált dokumentumok ábrázolása, melyel lehetséges az automatikus
+feldolgozás
+xml vs html:
+nincs előre definiált címkészlet
+célja adatok leírása
+adatcsere formátumként
+használják
+↔
+előre definiált címkészlet
+prezentációs nyelv
+tekinthető xml speciális
+alkalmazásának xhtml
+előnyei:
+- egyszerű
+- nyílt
+- gyártó- és platformfüggetlen
+- univerzális adatcsere formátum
+- tág infrastruktúra
+- de-facto szabvány az iparban
+hátrányai:
+- bőbeszédű, nehezen használható szintaxis
+- nagy tárigény
+- bonyolult
+dokumentumközpontú xml:
+- folyó szöveg, jelölésekkel kiegészítve, lényeges az elemek sorrendje
+- változatos szerkezet, emberi fogyasztásra szánt - xhtml
+adatközpontú xml:
+- nagy számú adatelem alkotója, sorrend kevésbé lényeges, szerkezete kevésbé
+random
+- gépi feldolgozásra szánt – svg
+9. xml 1.0
+dokumentumok: olyan szöveges objektum, mely szabvány előírás szerint jól formált
+- fizikai szerkezet: egyedeknek nevezett egységekből állnak
+- logikai szrkezet: deklarációkból, elemekből, foldolgozási utasításokból állnak
+jólformáltság:
+- gyökérelem tartalmazza a többi elemet (felső szintű)
+- minden nyitó cimkéhez záró tartozik
+- elemek egymásba ágyazottak, nem fedhetik egymást
+- adott dokumentumban minden hivatkozott egyed jólformált
+elemek: minden elemet nyitó és záró cimke határol, vagy üres elem cimke alkot. nyitó-
+záró, üres cimkében adott nevet elemtípusnak nevezünk
+- elemekhez meg lehet adni attribútum specifikációkat (név-érték páro- névadás: számmal nem kezdődhet vagy nem tartalmazhat
+specifikus karakterek: & és  jelölőhatárolóként használt
+- helyettük karakterhivatkozásokat, egyed hivatkozásokat kell használni
+- &amp, &gt, &/t
+jelölők:
+- nyitócimke: <név (atribútumspecifikáció)*s?>
+pl:
+- zárócimke:
+pl:
+- üres elem: <név (s )*s?>
+pl:
+- karakterhivatkozás:
+&#nnnn – n decimális
+&#hhhh – h hexadecimális
+- egedhivatkozás: hivatkozás névvel azonosítot egyed tartalmára
+pl: &név → &amp
+paraméteregyed-hivatkozás: %inline
+- megjegyzés:
+- feldolgozási utasítások: <? név (s szöveg)?>
+pl:
+- cdata szakasz határolók: olyan karakteres adat levédése, mely amúgy jelölő
+lenne
+pl:
+- xml deklaráció: meghatározza az xml használt verziószámát
+pl:
+<? xml version = ‘1.0’ encoding=”utf-8”>
+- dokumentumtípus deklaráció: egy osztályhoz egy nyelvtant mehatározó jelölő
+deklarációkat tartalmaz. ilyenekre mutat a név, a gyökérelem típusát írja elő
+dtd:
+dokumentumtípus-definíció: megszorítások írhatóak a dokumentum logikai
+szerkezetére, a tárolási egységek használatát támogatja.
+jelölő deklarációkból áll.
+- a dokumentumtípus-deklaráció mutathat külső dtd-re, tartalmazhat belső dtd
+alkészletet, vagy mindkettőt
+- a 2 alkészlet alkotja egy dokumentum dtd-jét
+- ha két alkészlet van a belső megelőzi a külsőt, ez lehetővé teszi a külsőben lévő
+egyed-attribútumlista-deklarációk felülírását
+érvényesség: akkor érvényes egy xml dokumentum, ha tartozik hozzá
+dokumentumtípus-deklaráció és a dokumentum eleget tesz a dtd általi
+megszorításoknak
+elemtípus-deklarációk: elem tartalmára ír előr megszorítást (egy elemtípus nem
+deklarálható többszöüres elemek: az így deklarált elemeknek nem lehet tartalma
+-
+elemtartalom: elemtartalmú az elemtípus, ha csak elemgyermekeket tartalmazhatnak
+- megjegyzések és feldolgozási utasítások is megengedettek
+- a deklaráció egy tartalommodellt határoz meg, ami reguláris kifejezéshez
+hasonló minta:
+- használható: sorozat, alternatív lista
+- előfordulások számára:
+vegyes tartalom: karakteres adatokat tartalmazhat elemegyedekkel vegyítve
+- korlátozható az elemgyereke típusa, de sorrendje, száma nem
+- pl: <! element message (#pcdata | value)*>
+érvényesség: ugyanaz a név nem szerepelhet egynél többször a deklarációban.
+- egyedhivatkozások a helyettesítő szövegükkel történő használat után az így
+deklarált elemet kar. adatok (dta szakaszokat, megjegyzéseket, feldolgozási
+utasításokat kell tartalmazzon), valamint olyan gyerekeket, melyek típusa
+megegyezik a tartalommodellben adott névvel
+? 0 vagy 1 előfordulás
++ 1 <= előfordulás
+* 0 <= előfordulás
+előre definiált egyedek:
+- előre definiált egyedek speciális karakterekhez: amp, /t, gt
+- ezeket minden xml feldolgozó fel kell ismerje
+- a /t és amp egyedeket olyan belső egyedként kell deklarálni, melyek
+helyettesítő szövege egy megfelelő karakterre mutató karakterhivatkozás
+ehhez ‘&’-t le kell védeni:
+- gt, apos és quot: olyan belső egyedként kell deklarálni, melyek helyettesítő
+szövege egyetlen karakter vagy karakterhivatkozás az adott karakterre:
+10. js / ecmascript
+- ecmascript: js programozási nyelv szabványosítása
+- javascript: ecmascript megvalósítása különböző gyártók által
+- js motor: olyan szoftver, ami végrehajtja a js kódot
+- főbb js motorok:
+- spidermonkey (mozill- c/c++
+- mozilla public license
+- v8
+- c++
+- new bsd license
+- chakra (ms edg- mit licencse
+- nashhorn (oracl- java
+- gplv2
+- graalvm (c(linux, maco- java
+- gplv2
+-
+- v8 motorra épül
+- skálázható, hálózati alkalmazások létrehozására tervezték
+- böngészőn kívül futtatható, js alkalmazások írhatóak vele kliens és szerver
+oldalon egyaránt
+- csomagok ökoszisztémája
+11. json
+json: könnyűsúlyú, szöveges, nyelvfüggetlen adatcsere formátum
+- struktúrált adatok ábrázolása
+- ember számára könnyen írható, olvasható formátum
+- szoftverek által könnyen generálható / feldolgozható
+json ↔ ecmascript
+- json az ecmascript szintaxisán alapul, de nem teljesen kompatibilis vele
+json ↔ xml
+- xml alternatívája, ugyanazok az előnyök xml hátrányai nélkül
+közös:
+- egyszerű (json job- ember számára könnyen értelmezhető
+- szoftver számára könnyen generálható, feldolgozható
+- interoperabilitás
+- nyiltság
+- önleíró db
+- univerzális adatcsere formátumok
+eltér:
+- json adatorientált ↔ xml dokoumentumorientált
+- json kevésbé bőbeszédű → adatszerkezet ábrázoláshoz alkalmas
+- xml dokumentumközpontú alkalmazásokhoz jobb, kiterjeszthető,
+kiforrottabb infrastruktúrája van
+primitív típusok:
+- számok: nincs korlátozás tartományukra és pontosságukra
+- sztringek: unicode karakterek sorozatai, melyeket idézőjelek határolnak
+- bármely karaktert tartalmazhat , “ ; \ levédve
+- vezérlő karakterek szintén csak levédve
+- speciális karakterekhez – szokásos escape szekvenciák
+- \unnnn módon is megadhatóak
+struktúrált típusok:
+- tömbök: tetszőleges számú érték rendezett sorozata
+lehet üres, elemek típusa eltérhet
+- objektumok: tetszőleges számú név-érték párok (membe// rfc 8259:
+- objektum interoperábilis, ha a tagok nevei egyediek
+- nem egyedi nevekkel az alkalmazások eltérően viselkedhetnek
+- nem minden elemző esetén állapítható meg a tagok sorrendje
+xml – json konverzió:image/png
+2006-07-24t14:58:332
+json:
+{
+“file” {
+“uri” : “”
+“size”: 1936
+“contenttype”: “image/png”
+“lastmodified”: “2006-07-24t14:58:332”
+}
+}
+json schema:
+json objektum: application / json média típus által leírt információ
+erőforrás, egy json érték
+példány (instance): olyan objektum melyre egy séma vonatkozik
+json séma:   - olyan json objektum mely példányokat ír le
+- objektum vagy logikai érték
+- a sémák egymásba ágyazhatók (root schema, subschem- média típus: application / schema + json
+tulajdonság (property): obj. példány egy tagja
+kulcsszó (keyword): egy sémaobjektum egy példányra vonatkozó tulajdonsága
+megszorításokat fejeznek ki, vagy információkkal lát el példányt
+szótár (vocab): adott célt szolgáló kulcsszavak halmaza
+kulcsszavaink jól meghatározott szintaxisa, jelentése van
+meta-séma: sémát leíró séma
+12. css
+- strukturált dokumentumok megjelenítésének leírása (többféle eszközt támoga- a tartalom és formázása elválik egymástól
+- w3c fejlesztése
+- szintjei: újabb szintek a korábbira épül, mely csak fejletebb verziók kezelnek
+css level 1: túlhaladott w3c ajánlás
+css level 2: - egyetlen dokumentum definiálja – css 2.1
+- css 2.2 javitása jelenleg fejlesztés alatt áll
+css level 3: fejlesztés alatt áll
+- moduláris felépítésű: minden modul egy css részt definiál
+css 2.1 specifikációt bővítik / cserélik le
+- moduloknak is vannak szintjei
+1-ről indulnak azok, melyeknek nincs css lvl 2 megfelelője
+3-tól csak melyek css lvl 2-t frissítik
+- modulok stabilitása eltérő
+css level 4 és azon túl: nem létezik css level 4
+- önálló modulok elérhetőek 4-es szintre, vagy tovább, de css 4 nincs
+dobozmodell:
+- a css egy fa struktúrájú dokumentumot kap,
+melyet egy vásznon jelenít meg, olyan dobozfa
+struktúrával mely a dokumentum formázási
+szerkezetét ábrázolja
+- a fa minden doboza a dokumentum egy
+megfelelő elemét ábrázolja
+- a css minden elemhez nulla vagy töb dobozt
+generál az elem display tulajdonsága alapján
+szintaktikai elemek:
+- karakterek: unicode karakterkészlet
+- vezérlősorozatok: unicode megadáshoz \hhhhhh, legfeljebb 6 hexa karakter
+- whitespace megadása végére, ha <6 hosszú
+- speciális karakter elnyomása: \  pl: given\name-re illeszkedik
+- megjegyzések: /* */ közt
+- deklarációs blokk: { } közt, deklarációk listája ;-vel elválasztva
+a deklarációk tulajdonságnév: érték formájúak
+- at-szabályok: stylesheet feldolgozásának speciális szabályai
+@karakterekel kezdődnek, melyet azonosító követ, ‘;’ zár vagy { }
+pl: @charset, @import
+- szabályhalmazok: kiválasztó(k)ból és deklarációs blokkból állnak
+tulajdonságok:
+- css által definiált paraméterek , melyekkel a dokumentum megjelenése
+vezérelhető
+- tulajdonságnak neve-értéke van
+- shorthand property (összevont tulajdonság): több css tulajdonság értékeinek
+egyidejű beállítása
+pl: margin → -top, -bottom, -left, -right
+kiválasztók:
+- típus kiválasztó: css minősített név, gyakorlatban azonosító, megfelelő nevű
+elem illeszkedik rá
+- általános kiválasztó: * formájú kiválasztó, minden elem illeszkedik rá, egyszerű
+kiválasztókból elhagyható, ami több elemet tartalmaz
+- attribútum kiválasztók:
+- [att]: az att attribútummal rendelkező elemek illeszkednek rá
+- [att=érték]: elemek att attribútumának érétéke ‘érték’ illeszkedik
+- osztály kiválasztó: .érték  (pont!!!)
+- id kiválasztó: #azonosító - szükséges id típus attribútum dokumentumban
+- pszeudo osztályok:    :azon vagy :azon(értéalakú
+- olyan kiválasztás mely dokumentumon kívüli információn alapul,
+egyszerű kiválasztókkal nem kifejezhető
+- bizonyos pszeudo-osztályok kizárják egymást
+- dinamikus pszeudo osztály:olyan p. o. amit egy elem megszerezhet vagy
+elveszíthet interakció hatására
+- :lang (pszeudo osztály:
+- c nyelvű szöveget tartalmazó elemek illeszkednek rá
+(c egy css azonosító nyelvkópl. lang(hpl. magyar nyelvű idézet esetén magyar idézőjelek:
+q:lang(hu){
+quotes: ”,,” “ ‘ ‘ “ “>>” “”
+- ha p és q egyszerű kiválasztók két sorozata, akkor a p>q kiválasztóra q-ra
+illeszkedő olyan elemek illeszkednek, melyek p-re illeszkedő elemek gyermekei
+szomszéd testvér kombinátor: egyszerű kiválasztók két  sorozatát elválasztó “+”
+- ha p és q egyszerű kiválasztók két sorozata, akkor p+q kiválasztóra a q-ra
+illeszkedő olyan elemek illeszkednek, melyek a p-re illeszkedő elemet követnek
+közvetlenül a dokumentumban
+- illeszkedő elemnek ugyanaz kell legyen a szülője
+- közöttük megengedettek olyan konstrukiók amik nem elemek
+pl: h1 + p {text_indent : 0}
+specifikusság:
+- a specifikusság egy háromelemű (a,b,vektor, ahol a,b,c nem negatív egészek
+- a vektorok rendezése lexikografikus
+- meghatározása: a = kiválasztóban előforfuló id-kiválasztók száma
+b = előforduló attr. kiválasztók & pszeudo-osztályok száma
+c = előforduló típus kiválasztók és pszeudo-elemek száma
+- b : negáció psz.o.-t ignorálni kell, de az argumentumát nem
+stílus eredet:
+- felhasználói ágenstől: biztosít alapértelmezett stíluslapot
+pl: ff: resource: //gre-resources/
+- felhasználótól származó saját stíluslapot adhat meg
+- szerzőtől származó: link fejlécelemmel adható meg külső stíluslap
+</> is használható
+xml esetén: xml-stylesheet
+kaszkád:
+- több különböző (eredetű) deklaráció szolgáltatja egy tulajdonság értékét egy
+elemhez
+- a kaszkád folyamata alatt kerül meghatároásra, mely deklaráció határozza meg
+az adott elem tulajdonságának értékét
+menete:
+- deklarációk sorbarendezése eredetük szerint csökkenően
+- azonos eredetű deklarációkat specifikusság szerint csökkenően
+- azonos specifikuság esetén előfordulási sorrend dönt
+(későbbi az erőseb- a tulajdonság értékét a sorrend szerint első deklaráció adja
+szabályok sorrendje:
+- azonos specifikusságú szabályoknál utolsó a legerősebb
+öröklés:
+- tulajdonságérték továbbadása (szülőtől gyermekne- bizonyos tulajdonságok értéke öröklődés alapján kerülnek meghatározásra, ha a
+kaszkád nem szól bele
+- a specifikáció minden tulajdonsághoz meghatározza, öröklött-e
+- kaszkádolt értéknél az inherit kényszeríti az öröklést
+- minden link a szülőelemtől örökli color értékét
+kezdőérték:
+- css specifikációja határozza meg minden tulajdonság kezdőértékét
+- kezdőérték előírható úgy, hogy felhasználói ágenstől függjön
+- ha kaszkád nem eredményez értéket és örökölt sincs, az alapértelmezett kerül
+beállításra
+- tulajdonság kaszkádolt értékénél az initial kulcsszó esetén a kezdőérték lesz a
+meghatározott érték
+13. css előfeldolgozók:
+css-t generálnak a css írására szolgáló saját szintaxisukból, új lehetőségekkel egészítik ki
+a css-t
+- közös jellemzők:
+- egysoros megjegyzések: // - nem generál css-t fordításkor
+- @import: böngészőktől eltérően kezelik a @import szabályokat
+sima css importokhoz a böngészőnek rendeléskor http kéréseket kel
+végrehajtson
+- az előfeldolgozók az importokat fordításkor végzik
+- sass: lehetőségei: változók, egymásbaágyazás, aritmetika, beépített függvények,
+asszociatív tömbök, kiterjesztés/öröklés import
+szintaxis: scss - css szintaxis kiterjesztése
+$size: 2em;
+{
+td {
+height: $size;
+width: $size;
+}
+}
+14. web jelölőnyelvei:
+html: a web elsődleges leíró nyelve, szemantikai szintű leíró nyelv és a kapcsolódó
+szemantikai szintű alkalmazásprogramozási interfészek a weben
+elérhető oldalak készítéséhez melyek statikus dokumentumoktól dinamikus
+alkalmazásokig terjednek
+html elemei: elemeknek, attribútumoknak és attr. értékeknek meghatározott
+szemantikája van, ezeket tilos nem rendeltetésszerűen használni
+minden elemnek van egy tartalommodellje, a tartalom meg kell feleljen a
+tartalommodell leírásának
+dom: a dom fa egy dokumentum memóriabeli ábrázolása, egy api dokumentumok
+eléréséhez és manipulálásához
+- minden csomópont egy api-val rendelkező objektum ábrázol, tehát manipulálható
+- dom interfészek web idl-ben kerülnek leírásra
+- a web idl egy interfészleíró nyelv, mely böngészőkben implementálható
+interfészek leírására szolgál
+- a html specifikáció a html elemek ábrázolásához a dom interfészeket
+kiterjesztő további interfészeket határoz meg
+- a html  implementációk megfelelési kritériumai is dom műveletekkel vannak
+meghatározva
+- egy dom fa szkriptekből manipulálható az oldalon
+- a html szintaxis hasonlít sgml-hez, xml-hez, de saját feldolgozási szabályai vannak
+- kötelező a dokumentumtípus deklaráció
+- speciális karakterek: elem szövege nem tartalmazhat <,> vagy & karaktert
+attribútum nem tartalmazhat & karaktert
+- félreérthető & karakter: & melyet ascii alfanumeirkus karakterek és ; követ
+- elem és attribútumnevek kis-nagybetű érzéketlenek
+- nem idézett attribútumérték szintaxis: ha attribútumérték nem tartalmaz
+whitespace karaktert és nem üres, elhagyható az “ “
+- logikai attribútum: logikai attribútum jelenléte az elem igaz értéket ábrázol
+hiánya hamis értéket
+- ha az attribútum megjelenik, akkor értékének üresnek kell lenni, vagy olyan
+értéknek mely az attribútum nevével megegyezik
+- void elemek: záró címké megadása tilos -
+- idegen elem: nyitó cimkéje lehet önlezáró, vagy kellhet külön záró
+- opcionális címke: bizonyos elemek zárócimkéje elhanyagolható
+pl: /i, ha újabb /i követi
+- ha nem lényegesek az elemek közötti whitespace karakterek
+- html nyitó elhanyagolható, ha elsőként nem megjegyzést tartalmaz,
+vagy nem megjegyzés követi
+- nem támogatottak a névtér deklarációk
+- cdata szakaszok csak idegen tartalomban használhatók
+- dokumentumtípus-deklaráció: célja hogy a megjelenítés szabványos módon történjen
+- xml-ben nem kötelező, tetszőleges dokumentum deklaráció használható
+15. reszponzív webdizájn
+lehetővé teszi az eszközökhöz igazodó tartalom szolgáltatását
+elrendezések:
+statikus
+abszolút mértékegységben (általában pixerögzített szélességet
+használó elrendezés
+fluid
+relatív mértékegységben kifejezett szélességet használ
+adaptív
+statikus elrendezések egy sorozata, médialekérdezés után határoz
+meg különböző statikus elrendezést
+reszponzív
+fluid elrendezések sorozata, médialekérdezések után határoz meg
+különboző szélességet
+- pixel: css és fizikai pixelek különbözőek
+- referenciapixel: az a látószög mely alatt egy pixel látszik egy 96 dpi pixelsűrűségű
+eszközön kartávolságból nézve
+karhossz távolságból 1px ~ 0.26mm (1/96 inc- css abszolút hosszúság mértékegységek
+- egymáshoz képest rögzítettek, valamilyen fizikai mértékegységhez kötött
+- kötése: fizikai mértékegységek a megfelelő fizikai mérésekhez való kötése vagy
+px referenciapixelhez kötése
+- kis pixelsűrűségnél ajánlott px-hez kötni
+- nagy pixelsűrűségnél ajánlott szabványos fizikai mértékegységhez kötni
+- nézetablak mértékegységek:
+vw: nézetablak 1%-a
+vh: nézetablak magasságának 1%-a
+vmin: vw és vh közül a kissebbel egyenlő
+vmax: vw és vh közül a magasabbal egyenlő
+- médialekérdezések:
+- a média lekérdezés egy módszer a felhasználói ágens vagy eszköz bizonyos
+jellemzőinek vizsgálatára melyen megjelenik a dokumentum
+- csak külső információtól függenek, kivéve ha máshogy írják elő
+css-ben:
+@import: ha a média lekérdezés nem illeszkedik, az import nem
+ervényesül
+@media: feltételes csapatszabályok egy feltételt társítanak más css
+szabályok egy csoportjához
+- minden feltételes csoportszabálynak van egy feltétele ami lehet igaz vagy
+hamis
+ha a feltétel igaz a css feldolgozónak használnia kell a csoportban
+meghatározott szabályokat
+xml-ben:
+- xml-stylesheet feldolgozási utasítás média pszeudo-attribútuma
+a médiát adja meg melyre a hivatkozott stylesheet vonatkozik
+html-ben: link, source, style-ra adható meg média attribútum
+- szintaxis: opcionális módosító, opcionális médiatípus, opcionális média feltétel
+több lekérdezés vesszővel elválasztva kombinálható
+- kiértékelés: média lekérdezés igaz, ha:
+média feltétele igaz
+típus meg van adva, illeszkedik az eszköz típusára, ahol az ágens fut
+valamely komponens lekérdezése igaz, hamis ha az összes hamis
+- agenteknek változáskor újra ki kell értékelni a lekérdezéseket
+- média típusok:
+au
+összes eszköz
+print
+nyomtatott megjelenítést célzó eszközök
+screen print-re, speechr-re nem illeszkedő eszközök
+speech képernyőolvasók, hasonló eszközök
+- média jellemzők: média típusoknál finomabb teszt, ami bizonyos jellemzőt vizsgál
+width
+szélességet vizsgál
+height
+magasságot vizsgál
+orientation álló/fekvő tájolást vizsgál
+- kombinálás:
+not jellemzők negálása
+and
+or
+- mindkettő
+összefűzés
+- vagy
+- min-max előtagok:
+min: >=
+max: <=
+- diszkrét típusú média jellemzőkhöz nem adható meg min vagy max
+- nézetablak:
+- látható: oldalnak a kijelzőn látható része (visual viewpoinelrendezési nézetablak, melyben a böngésző kirajzol egy objectet (layout
+viewpoin- viewpoint meta: layout viewpoint méretének és kezdeti nagyítási arányának
+megadása
+16. http haladó lehetőségei
+get:
+- cél erőforrás egy aktuális kiválasztott reprezentációját kéri
+- információ lekérési cél
+- range fejlécmező küldésével módosítható, csak bizonyos részét kéri a
+kiválasztott reprezentációnak
+- válasz gyórsítótárazható
+post:
+- kéri, hogy a cél dolgozza fel a mellékelt reprezentációt saját szemantikája szerint
+- lehetőségek:
+- adatok küldése adatfeldolgozó folyamatoknak
+- üzenet postázása blogra, hírcsoportba
+- új erőforrás létrehozása
+- adathozzáfűzés erőforrás létező reprezentációjához
+- csak akkor gyorsítótárazható, ha explicit frissítést tartalmaz
+sütik:
+- név-érték pár és kapcsolódó metaadatok, melyeket egy eredet szerver egy
+válasz set-cookie fejlécmezőben küld az agentnek
+- attribútumokkal egy hatáskört határoz meg a sütikhez
+- továbbiakban az ágens a név-érték párokat a cookie fejlécmezőben küldi vissza
+felhasználása:
+- munkamenet-kezelés
+- testreszabás
+- felhasználó követés
+set-cookie:
+- felhasználó eltárolja az attribútumokat , amiket ebből kap
+- továbbiakban, amikor az ágens http kérést hajt végre a cookie mezőbe helyezi
+a nem lejárt sütiket (csak név-érték pároka- ha ágens olyan sütit kap melynek neve domain és path attribútuma megegyezik
+egy korábbival, lecseréli azt
+attribútumok:
+harmadik féltől származó sütik:
+- html oldal megjelenítésekor az ágens gyakran kér le erőforrásokat más
+szerverektől
+- ezek a szerverek sütiket használnak a felhasználó követésére
+felhasználó követése:
+- felhasználó tevékenységével kapcsolatos adagyüjtés több kontextuson
+keresztül, majd begyűjtött adatok megosztása kontextuson kívül
+- alapja: ip, sütik, etag, eszköz ujjlenyomat
+referer fejlécmező:
+- ágens megadhatja azt az erőforrás azonosító uri-t amiből a cél származik
+védekezés:
+- refer küldésének tiltása:
+- ff:
+- chrome: refer control
+- opera: noref
+- harmadik féltől származó sütik tiltása:
+- privát böngészés, automatikus törlés munkamenet végén
+- bővítmények:
+- adblock
+- disconnect
+- ublock
+expires
+süti lejáratának ideje
+max-age
+lejáratának ideje (másodperdomain
+meghatározza mely szervereken lesz küldve a süti ha a (?)
+kihagyja az attribútumot csak eredet szerveren továbbít
+ágens mindent elutasít, ami hatásköre nem tartalmazza az
+eredet szervert
+path
+süti hatáskörét útvonalakra korlátozza
+ha a szerver ezt kihagyja, az ágens a kért uri útvonal
+komponensének könyvtárát használja
+source
+sütik hatáskörének korlátozása biztonságos csatornákra
+http only http kérésekre korlátozza a sütiket
+kliens oldali api-k számára nem lesz elérhető
+17. http/2
+- késleltetési idő csökkentése: képek közvetlen beágyazása css-be
+- spriting: több kép kombinálása egy állományba
+- sharding: tartalom elosztása több szerveren
+- összefűzés: több css és js állomány összefűzése
+- kicsinyités: felesleges karakterek eltávolítása
+http/2:
+- optimalizált http szemantika
+- cél a hálózati erőforrások hatékony kihasználása, késleltetés csökkentése
+- klienseknek csak 1 kapcsolatot kelljen fenntartani
+- üzenetek formálása / átvitele eltérő
+újdonságok:
+- multiplexelés: független adatfolyamok használata
+- forgalomvezérlés / rangsorolás: multiplexelés hatékony megvalósítására
+- annyi adat kerüljön továbbításra, amennyit a fogadó kezelni tud
+- legfontosabb adatokat küldje elsőnek
+- szerver push: spekulatív módon küld adatokat a kliensnek, melyekre szüksége
+lehet
+- bináris protokoll: binárisan formázza az üzeneteket – hatékonyabb küldés
+- hpack: fejlécmezők tömörítése
+üzenetek multiplexelése:
+s7
+s9
+s7
+s7
+s5
+data
+media
+data
+media
+media
+s3
+s3
+s3
+media
+data
+data
+keretek:
+hossz: adatrész hossza 24 bit
+típus: felépítést és szemantikát határoz
+meg 8 bit
+jelzők: logikai jelzők (típusfüggő) 8 bit
+hossz - 24 bit
+típus - 8 bit
+jelzők - 8 bit
+r
+adatfolyam azon 31 bit
+adatrész
+r: fentartott célú 0 bit
+adatfolyan id: 31 bit, adatfolyamot azonosítja
+keretfajták: kód / típus / funkció
+0x0 – data: payload átvitele
+0x1 – headers: adatfolyam megnyitása, fejléc blokk töredék biztosítása
+0x5 – push_promise: szerver_push megvalósítása
+0xs – continuation: fejléc blokk töredékek sorozatának folytatása
+adatfolyamok:
+- egy http/2 kapcsolat több adatfolyamot tartalmazhat egy időben
+- adatfolyamokat egyoldalúan hozhatja létre szerver vagy kliens, mindkét
+végpont lezáratja
+- keretek sorrendje lényeges, fogadó a kapott sorrendben dolgozza fel őket
+azonosításuk:
+- kliens által nyitott adatfolyamat páratlan szám azonosítja
+- szerver által nyitott adatfolyamat páros szám azonosítja
+- 0x00 azonosítót vezérlő üzenetekhez használják
+- új kapcsolatok azonosítójának nagyobbnak kell lenni minden korábbinál
+- azonosítók nem újrafelhasználhatóak, hosszú kapcsolatnál kimerülhet az
+azonosító tartomány → új kapcsolat
+http/2 kérés-válasz:
+- a kliens minden kérést új adatfolyamon küld el
+- szerver ugyanezen küldi a választ
+- üzenetváltáskor elhasználódik az adatfolyam
+- választ váró keret zárja az adatfolyamot
+fejlécmezők:
+- http/2 kódolás miatt fejléc mezőket kisbetüssé kell alakítani
+pszeudo-fejlécmezőket használunk ehhez
+pszeudo-fejlécmezők:
+- kérés:
+- method: http metódust tartalmaz
+- scheme: cél uri séma részeit tartalmazza
+- authority: cél uri autoritás része, host fejlécmező megfelelője
+- path: cél uri útvonal és lekérdezés része
+// szerver szintű options kéréseknél a * az értéke
+- válasz:
+- status: http állapotkódot hordozza (minden válasz rész- pszeudo fejlécmezőknek meg kell előzni a rendes fejlécmezőket
+18. http/3
+http szemantika quic-re leképezve
+quic: udp-re épülő biztonságos, általános célú átviteli protokoll
+http2-http3 összehasonlítás:
+hasonlóság
+eltérés
+ugyanazok a lehetőségek kliensek
+számára
+adatfolyamok
+szerver push
+feljéc tömörítés
+http/2 impementálható tls nélkül
+http/2 néhány keretfajtája nem
+szükséges, quic nyújt alternatívát
+(continuation és priority sincs
+http/3-bahttp/3 a hpack módosított változatát
+(qpachasználja
